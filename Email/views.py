@@ -8,7 +8,7 @@ from .models import IndexBackground
 
 def index (request):
 
-    BackgroundIMG = IndexBackground.objects.all()
+    BackgroundIMG = IndexBackground.objects.first()
 
     #EmailSend
 

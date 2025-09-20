@@ -3,7 +3,7 @@ from django import forms
 class EmailFill (forms.Form):
 
     FullName = forms.CharField (label='',max_length=20, widget=forms.TextInput(attrs={
-        'class' : 'form-control',
+        'class' : 'blurCardInput ps-3',
         'placeholder' : 'First Name'
     }))
 
