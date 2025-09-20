@@ -17,13 +17,19 @@ def index (request):
 
         if form.is_valid():
 
+            FullName = form.cleaned_data['FullName'],
+            Message = form.cleaned_data['MainMessage']
+            From = form.cleaned_data['From']
+
+
             send_mail (
-                form.cleaned_data['FirstName', 'LastName'],
-                form.cleaned_data[f"TO:"+'From'],
-                form.cleaned_data['MainMessage']
+                FullName,
+                Message,
+                From,
+                ['To']
             )
 
-            return redirect ('index')
+            return redirect ('Index')
 
     context = {
         'form' : form
