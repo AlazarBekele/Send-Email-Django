@@ -2,10 +2,13 @@ from termios import OPOST
 from django.shortcuts import render, redirect
 from .forms import EmailFill
 from django.core.mail import send_mail
+from .models import IndexBackground
 
 # Create your views here.
 
 def index (request):
+
+    BackgroundIMG = IndexBackground.objects.all()
 
     #EmailSend
 
@@ -32,7 +35,8 @@ def index (request):
             return redirect ('Index')
 
     context = {
-        'form' : form
+        'form' : form,
+        'BGIMG' : BackgroundIMG
     }
 
     return render (request, 'index.html', context=context)
